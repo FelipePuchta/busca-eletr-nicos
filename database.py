@@ -1,11 +1,14 @@
 import psycopg2
+from dotenv import load_dotenv
 import os
 
+load_dotenv(r"C:\Users\Usuario\Desktop\Projetos Python\.env")
+
 conexao = psycopg2.connect(
-    host="localhost",
-    database="busca_eletronicos",
-    user="postgres",
-    password="Fe26122005"
+    host=os.getenv("DB_HOST"),
+    database=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD")
 )
 
 cursor = conexao.cursor()

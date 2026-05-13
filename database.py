@@ -4,6 +4,8 @@ import os
 
 load_dotenv(r"C:\Users\Usuario\Desktop\Projetos Python\.env")
 
+print("Senha lida:", os.getenv("DB_PASSWORD"))
+
 conexao = psycopg2.connect(
     host=os.getenv("DB_HOST"),
     database=os.getenv("DB_NAME"),
